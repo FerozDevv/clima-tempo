@@ -17,19 +17,19 @@ export const currentWeatherData = async (data, key) => {
   let API_URL;
 
   if (data.lat && data.lon) {
-    API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=d98411a21a90bab401b28d9346819bba&units=metric`;
+    API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=d98411a21a90bab401b28d9346819bba&units=metric&lang=pt`;
   } else {
-    API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=d98411a21a90bab401b28d9346819bba&units=metric`;
+    API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=d98411a21a90bab401b28d9346819bba&units=metric&lang=pt`;
   }
 
   const response = await fetch(API_URL);
 
   if (!response.ok) {
     if (response.status === 404) {
-      throw new Error(`Sorry, we couldn't find ${data}. Please double-check the spelling and try again.`);
+      throw new Error(`Desculpe, não conseguimos encontrar ${data}. Verifique a ortografia e tente novamente.`);
     } else {
       throw new Error(
-        "Oops! We're having trouble getting the latest weather information right now. Please try again later or contact support if the problem persists."
+        "Ops! Estamos tendo problemas para obter as informações meteorológicas mais recentes no momento. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
       );
     }
   }
