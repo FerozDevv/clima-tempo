@@ -66,7 +66,7 @@ searchBoxInput.addEventListener("keyup", async (event) => {
 gpsButton.addEventListener("click", getUserLocation);
 
 ctaButton.addEventListener("click", () => {
-  window.open("https://www.instagram.com/felpsilva14");
+  window.open("https://www.instagram.com/feipa_085/?utm_source=ig_web_button_share_sheet");
 });
 
 topButton.addEventListener("click", scrollToTop);
