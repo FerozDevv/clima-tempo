@@ -2,7 +2,7 @@ import { formatDate } from "./convertUnits";
 
 export const filterForecastData = async (weatherForecastData) => {
   const previousFilterContainer = document.querySelector(".filter-container");
-  const uniqueDates = new Set(["All Days"]);
+  const uniqueDates = new Set(["Todos os Dias"]);
   const body = document.querySelector("body");
 
   if (previousFilterContainer) {
@@ -28,7 +28,7 @@ export const filterForecastData = async (weatherForecastData) => {
     const filterItem = document.createElement("div");
     filterItem.classList.add("filter-item");
 
-    if (uniqueDate === "All Days") {
+    if (uniqueDate === "Todos os Dias") {
       filterItem.classList.add("active");
     }
 
@@ -56,7 +56,7 @@ export const filterForecastData = async (weatherForecastData) => {
       dailyWeatherForecastDates.forEach(async (dailyWeatherForecastDate) => {
         dailyWeatherForecastDate.parentElement.parentElement.style.display = "flex";
 
-        if (filterItem.innerHTML === "All Days") {
+        if (filterItem.innerHTML === "Todos os Dias") {
           dailyWeatherForecastDate.parentElement.parentElement.style.display = "flex";
 
           filterItem.classList.add("active");
