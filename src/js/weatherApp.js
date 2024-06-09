@@ -21,13 +21,13 @@ const fetchWeatherData = async (data) => {
     await weatherForecastData(data, API_KEY);
     await endLoadingState();
   } catch (error) {
-    if (error.message === "Failed to fetch") {
+    if (error.message === "Falha ao buscar") {
       await handleError(
-        "Uh oh! It looks like you're not connected to the internet. Please check your connection and try again.",
-        "Refresh Page"
+        "Ah, Você está sem internet? Por favor verifique sua conexão e tente novamente.",
+        "Atualize a página"
       );
     } else {
-      await handleError(error.message, "Try Again");
+      await handleError(error.message, "Tente novamente");
     }
   }
 };
@@ -66,7 +66,7 @@ searchBoxInput.addEventListener("keyup", async (event) => {
 gpsButton.addEventListener("click", getUserLocation);
 
 ctaButton.addEventListener("click", () => {
-  window.open("https://github.com/pekkiriscim/weather");
+  window.open("https://www.instagram.com/felpsilva14");
 });
 
 topButton.addEventListener("click", scrollToTop);
